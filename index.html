@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Desktop Online</title>
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<link rel="stylesheet" type="text/css" href="./ui-selector/dist/uiSelector.css">
+	</head>
+	<body>
+
+		<div id="desktop">
+			<div class="ui-element">
+				<div class="do-entity" do-type="file">
+					<img src="./assets/icons/file2.png" style="max-height: 80%;">
+					<span>Test</span>
+				</div>
+			</div>
+			<div class="ui-element">
+				<div class="do-entity" do-type="folder">
+					<img src="./assets/icons/folder2.png" style="max-height: 80%;">
+					<span>Test</span>
+				</div>
+			</div>
+			<div class="ui-element">
+				<div class="do-entity" do-type="folder">
+					<img src="./assets/icons/folder2.png" style="max-height: 80%;">
+					<span>Test</span>
+				</div>
+			</div>
+			<div class="ui-element">
+				<div class="do-entity" do-type="file">
+					<img src="./assets/icons/file2.png" style="max-height: 80%;">
+					<span>Test</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="bar-menu">
+			<!-- -->
+		</div>
+
+		<div id="bar">
+			<div class="pull-left">
+				<img src="./assets/do_small.png" class="do-logo">
+			</div>
+		</div>
+
+		<div class="modal">
+			<div class="modal-content">
+				<!-- -->
+			</div>
+		</div>
+
+		<div id="mouse-right">
+			<!-- -->
+		</div>
+
+		<script type="text/javascript" src="./ui-selector/dist/uiSelector.js"></script>
+		<script type="text/javascript">
+			//
+			uiSelector('#desktop');
+		
+			//
+			document.querySelector('img.do-logo').addEventListener('click', function() {
+				var type = document.querySelector('#bar-menu').style.display;
+				document.querySelector('#bar-menu').style.display = (type === '' || type === 'none' ? 'block' : 'none');
+			});
+
+			//
+			var folders = document.querySelectorAll('div[do-type=folder]');
+			for (var index in folders) {
+				if (typeof(folders[index]) != 'object') {
+					continue ;
+				}
+				folders[index].addEventListener('mousedown', function(e) {
+					var type = document.querySelector('.modal').style.display;
+					document.querySelector('.modal').style.display = (type === '' || type === 'none' ? 'block' : 'none');
+				});
+			}
+
+			//
+			document.addEventListener('contextmenu', function(e) {
+				e.preventDefault();
+				console.log(e.offsetY);
+				document.querySelector('#mouse-right').style.top = e.offsetY + 'px';
+				document.querySelector('#mouse-right').style.left = e.offsetX + 'px';
+				document.querySelector('#mouse-right').style.display = 'block';
+				return false;
+			});
+
+			//
+			document.addEventListener('mousedown', function(e) {
+				if (event.which == 1) {
+					document.querySelector('#mouse-right').style.display = 'none';
+				}
+			});
+
+			// switch (event.which) {
+			// case 1:
+			// alert('Left Mouse button pressed.');
+			// break;
+			// case 2:
+			// alert('Middle Mouse button pressed.');
+			// break;
+			// case 3:
+			// alert('Right Mouse button pressed.');
+			// break;
+			// default:
+			// alert('You have a strange Mouse!');
+			// }
+		</script>
+	</body>
+</html>

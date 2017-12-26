@@ -1,0 +1,142 @@
+html
+{
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+	background: url('./assets/background.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+
+body
+{
+	height: 100%;
+}
+
+#desktop
+{
+	padding: 25px;
+	height: 100%;
+}
+
+div.ui-element
+{
+	cursor: pointer;
+	float: left;
+	padding: 15px;
+	margin: 10px;
+	height: 70px;
+	width: 70px;
+	border: 1px solid transparent;
+}
+
+div.ui-element:hover
+{
+	background: rgba(191, 191, 191, 0.17);
+	border: 1px solid #b9b9b9;
+	border-radius: 5px;
+}
+
+div.ui-element.ui-selected
+{
+	border-radius: 5px;
+}
+
+div.ui-element.ui-selected:hover
+{
+	background: rgba(51, 153, 255, 0.3);
+}
+
+div.do-entity
+{
+	height: 100%;
+	color: #FFF;
+	text-align: center;
+}
+
+div.do-folder
+{
+	background: url('./assets/icons/folder.png') no-repeat;
+	background-size: 100% 100%;
+	height: 100%;
+	color: #FFF;
+	text-align: center;
+}
+
+#bar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #FFF;
+	padding: 0 15px;
+	height: 50px;
+	background: #222;
+	border-top: 1px solid #555;
+}
+
+#bar-menu
+{
+	display: none;
+	position: absolute;
+	bottom: 51px;
+	left: 0;
+	color: #FFF;
+	padding: 0 15px;
+	height: 600px;
+	width: 400px;
+	background: #222;
+}
+
+img.do-logo
+{
+	cursor: pointer;
+	width: 50px;
+	padding: 10px 20px;
+}
+
+img.do-logo:hover
+{
+	background: #3e3e3e;
+}
+
+.pull-left
+{
+	float: left;
+}
+
+.pull-right
+{
+	float; right;
+}
+
+.modal
+{
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.modal-content
+{
+	background: #FFF;
+	width: 800px;
+	height: 500px;
+	margin: 150px auto 0 auto;
+	border-radius: 5px;
+}
+
+#mouse-right
+{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #FFF;
+	border-radius: 5px;
+	width: 200px;
+	height: 400px;
+}
